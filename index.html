@@ -93,6 +93,7 @@
         
         input, select, textarea {
             color: white !important;
+            appearance: none;
         }
         
         select option {
@@ -126,7 +127,7 @@
                 <a href="#servicios" class="hover:text-[#d9ab4e] transition">Servicios</a>
                 <a href="#contacto" class="hover:text-[#d9ab4e] transition">Contacto</a>
             </div>
-            <a href="https://wa.me/51980652872" target="_blank" class="btn-gold px-6 py-2 rounded text-xs uppercase">Reserva Cita</a>
+            <a href="https://wa.me/51980652872" target="_blank" class="btn-gold px-6 py-2 rounded text-xs uppercase">WhatsApp Directo</a>
         </div>
     </nav>
 
@@ -141,41 +142,62 @@
                     Brindamos soluciones integrales en área legal y técnica en Trujillo y todo el Perú. Seguridad jurídica y respaldo para su patrimonio.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="#reservar" class="btn-gold px-10 py-4 rounded shadow-xl">RESERVA TU CITA</a>
+                    <a href="#reservar" class="btn-gold px-10 py-4 rounded shadow-xl uppercase text-xs font-bold tracking-widest">Reserva tu cita</a>
                     <a href="#contacto" class="border border-white/30 px-10 py-4 rounded hover:bg-white/10 transition uppercase text-xs font-bold tracking-widest">Contáctanos</a>
                 </div>
             </div>
 
-            <!-- FORMULARIO DE RESERVA INTEGRADO CON FORMSPREE -->
+            <!-- FORMULARIO DE RESERVA CON FORMSPREE Y CAMPO CELULAR -->
             <div id="reservar" class="glass-card p-8 rounded-2xl border-2 border-[#d9ab4e]/40 shadow-2xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-[#d9ab4e]/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
                 <h3 class="text-2xl font-bold mb-2 text-center uppercase">RESERVA TU CITA</h3>
                 <p class="text-center text-[#d9ab4e] text-xs uppercase tracking-widest mb-8">Atención Especializada SUNARP</p>
                 
-                <form action="https://formspree.io/f/mojnerjj" method="POST" class="space-y-4">
+                <form id="reservaForm" action="https://formspree.io/f/mojnerjj" method="POST" class="space-y-4">
+                    <!-- Fila: Nombre y Celular -->
                     <div class="grid md:grid-cols-2 gap-4">
-                        <input type="text" name="nombre" required placeholder="Nombre completo" class="w-full bg-white/5 border border-white/10 p-3 rounded text-sm focus:border-[#d9ab4e] outline-none transition">
-                        <input type="tel" name="telefono" required placeholder="Teléfono / WhatsApp" class="w-full bg-white/5 border border-white/10 p-3 rounded text-sm focus:border-[#d9ab4e] outline-none transition">
+                        <div class="space-y-1">
+                            <label class="text-[10px] uppercase text-[#d9ab4e] ml-1 font-bold">Nombre Completo</label>
+                            <input type="text" name="nombre" required placeholder="Juan Pérez" class="w-full bg-white/5 border border-white/10 p-3 rounded text-sm focus:border-[#d9ab4e] outline-none transition">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] uppercase text-[#d9ab4e] ml-1 font-bold">Número de Celular</label>
+                            <input type="tel" name="celular" required placeholder="987 654 321" class="w-full bg-white/5 border border-white/10 p-3 rounded text-sm focus:border-[#d9ab4e] outline-none transition">
+                        </div>
                     </div>
-                    <input type="email" name="correo" required placeholder="Correo electrónico" class="w-full bg-white/5 border border-white/10 p-3 rounded text-sm focus:border-[#d9ab4e] outline-none transition">
+
+                    <!-- Email -->
+                    <div class="space-y-1">
+                        <label class="text-[10px] uppercase text-[#d9ab4e] ml-1 font-bold">Correo Electrónico</label>
+                        <input type="email" name="correo" required placeholder="correo@ejemplo.com" class="w-full bg-white/5 border border-white/10 p-3 rounded text-sm focus:border-[#d9ab4e] outline-none transition">
+                    </div>
                     
-                    <select name="servicio" required class="w-full bg-[#152c59] border border-white/10 p-3 rounded text-sm focus:border-[#d9ab4e] outline-none transition">
-                        <option value="">Seleccione Servicio de Interés</option>
-                        <option value="Declaratoria de Fabrica">Declaratoria de Fábrica</option>
-                        <option value="Independizacion">Independización</option>
-                        <option value="Legal (Prescripcion/Sucesion)">Área Legal (Prescripción/Sucesión)</option>
-                        <option value="Tramite Vehicular">Trámite Vehicular</option>
-                    </select>
+                    <!-- Servicio -->
+                    <div class="space-y-1">
+                        <label class="text-[10px] uppercase text-[#d9ab4e] ml-1 font-bold">Servicio de Interés</label>
+                        <select name="servicio" required class="w-full bg-[#152c59] border border-white/10 p-3 rounded text-sm focus:border-[#d9ab4e] outline-none transition">
+                            <option value="">Seleccione una opción</option>
+                            <option value="Declaratoria de Fabrica">Declaratoria de Fábrica</option>
+                            <option value="Independizacion">Independización</option>
+                            <option value="Legal (Prescripcion/Sucesion)">Área Legal (Prescripción/Sucesión)</option>
+                            <option value="Tramite Vehicular">Trámite Vehicular</option>
+                            <option value="Busqueda Catastral">Búsqueda Catastral</option>
+                        </select>
+                    </div>
                     
-                    <textarea name="mensaje" placeholder="Cuéntenos sobre su caso..." rows="3" class="w-full bg-white/5 border border-white/10 p-3 rounded text-sm focus:border-[#d9ab4e] outline-none transition"></textarea>
+                    <!-- Mensaje -->
+                    <div class="space-y-1">
+                        <label class="text-[10px] uppercase text-[#d9ab4e] ml-1 font-bold">Detalles del Caso</label>
+                        <textarea name="mensaje" placeholder="Describa brevemente su consulta..." rows="3" class="w-full bg-white/5 border border-white/10 p-3 rounded text-sm focus:border-[#d9ab4e] outline-none transition"></textarea>
+                    </div>
                     
-                    <div class="flex flex-col gap-3">
+                    <div class="flex flex-col gap-3 pt-2">
                         <button type="submit" class="btn-gold w-full py-4 rounded text-sm uppercase tracking-widest hover:brightness-110 flex items-center justify-center gap-2">
-                            <i data-lucide="mail" class="w-4 h-4"></i> Enviar Solicitud por Email
+                            <i data-lucide="mail" class="w-4 h-4"></i> Enviar a Correo
                         </button>
                         
                         <button type="button" onclick="sendToWhatsApp()" class="border border-green-500/50 text-green-500 hover:bg-green-500/10 w-full py-3 rounded text-[10px] uppercase tracking-widest flex items-center justify-center gap-2 transition">
-                            <i data-lucide="message-circle" class="w-4 h-4"></i> Consultar vía WhatsApp
+                            <i data-lucide="message-circle" class="w-4 h-4"></i> Enviar a WhatsApp
                         </button>
                     </div>
                 </form>
@@ -250,7 +272,7 @@
             </div>
 
             <!-- AREA LEGAL -->
-            <div class="mb-20">
+            <div>
                 <h3 class="flex items-center gap-3 text-2xl font-bold mb-10 text-[#d9ab4e]">
                     <i data-lucide="scale"></i> ÁREA LEGAL
                 </h3>
@@ -276,50 +298,19 @@
         </div>
     </section>
 
-    <!-- TESTIMONIOS -->
-    <section class="py-24 bg-[#0b1629]">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-16 uppercase tracking-widest">Clientes Satisfechos</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-2xl relative text-left">
-                    <i data-lucide="quote" class="absolute top-4 right-4 text-[#d9ab4e]/20 w-12 h-12"></i>
-                    <p class="text-sm italic mb-6 leading-relaxed">"Excelente atención. Lograron independizar mi propiedad en el tiempo pactado después de años de intentos fallidos."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-[#d9ab4e] flex items-center justify-center text-[#152c59] font-bold">RM</div>
-                        <span class="font-bold text-xs uppercase">Ricardo Mendoza</span>
-                    </div>
-                </div>
-                <div class="glass-card p-8 rounded-2xl relative text-left border-t-2 border-t-[#d9ab4e]">
-                    <i data-lucide="quote" class="absolute top-4 right-4 text-[#d9ab4e]/20 w-12 h-12"></i>
-                    <p class="text-sm italic mb-6 leading-relaxed">"El profesionalismo del equipo legal es impecable. Su asesoría en la sucesión intestada fue clara y efectiva."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-[#d9ab4e] flex items-center justify-center text-[#152c59] font-bold">LG</div>
-                        <span class="font-bold text-xs uppercase">Laura García</span>
-                    </div>
-                </div>
-                <div class="glass-card p-8 rounded-2xl relative text-left">
-                    <i data-lucide="quote" class="absolute top-4 right-4 text-[#d9ab4e]/20 w-12 h-12"></i>
-                    <p class="text-sm italic mb-6 leading-relaxed">"Recomendados al 100%. Trámite vehicular rápido y seguro. MACETII es sinónimo de confianza."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-[#d9ab4e] flex items-center justify-center text-[#152c59] font-bold">JC</div>
-                        <span class="font-bold text-xs uppercase">Juan Carlos Paredes</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACTO & UBICACIÓN -->
+    <!-- UBICACIÓN Y CONTACTO -->
     <section id="contacto" class="py-24 bg-[#152c59]/10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid lg:grid-cols-2 gap-16">
                 <div>
-                    <h2 class="text-3xl font-bold mb-8 uppercase tracking-tighter">Ubícanos</h2>
-                    <div class="glass-card p-4 rounded-xl mb-6 overflow-hidden h-[300px] flex flex-col items-center justify-center text-center">
-                        <i data-lucide="map-pin" class="w-12 h-12 text-[#d9ab4e] mb-4"></i>
-                        <h4 class="font-bold mb-2">Trujillo, Perú</h4>
-                        <p class="text-sm text-slate-400">Pje. Los Mirlos N°155, Urb. Los Pinos</p>
-                        <a href="https://maps.google.com" target="_blank" class="mt-4 text-[#d9ab4e] text-xs font-bold underline">VER EN GOOGLE MAPS</a>
+                    <h2 class="text-3xl font-bold mb-8 uppercase tracking-tighter">Ubícanos en Trujillo</h2>
+                    <div class="glass-card p-4 rounded-xl mb-6 overflow-hidden h-[350px]">
+                        <div class="w-full h-full bg-slate-800 flex flex-col items-center justify-center text-center p-10">
+                            <i data-lucide="map-pin" class="w-12 h-12 text-[#d9ab4e] mb-4"></i>
+                            <h4 class="font-bold mb-2">Trujillo, La Libertad</h4>
+                            <p class="text-sm text-slate-400">Pasaje Los Mirlos N°155, Urb. Los Pinos, Mz G Lote 14</p>
+                            <a href="https://maps.google.com" target="_blank" class="mt-6 text-[#d9ab4e] text-xs font-bold underline">VER EN GOOGLE MAPS</a>
+                        </div>
                     </div>
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="flex items-center gap-4">
@@ -341,14 +332,16 @@
                 
                 <div class="flex flex-col justify-center">
                     <div class="bg-white/5 p-10 rounded-2xl border border-white/10">
-                        <h3 class="text-2xl font-bold mb-8 uppercase tracking-tighter italic">Contacto Directo</h3>
-                        <div class="space-y-4">
-                            <a href="https://wa.me/51980652872" target="_blank" class="flex items-center justify-between p-4 bg-[#152c59] rounded-lg border border-[#d9ab4e]/30 hover:bg-[#d9ab4e] hover:text-[#152c59] transition font-bold">
-                                <span>WhatsApp</span>
+                        <h3 class="text-2xl font-bold mb-8 flex items-center gap-4 italic uppercase tracking-tighter">
+                            <span class="w-10 h-[2px] bg-[#d9ab4e]"></span> Contacto Directo
+                        </h3>
+                        <div class="space-y-6">
+                            <a href="https://wa.me/51980652872" target="_blank" class="flex items-center justify-between p-4 bg-[#152c59] rounded-lg border border-[#d9ab4e]/30 hover:bg-[#d9ab4e] hover:text-[#152c59] transition group">
+                                <span class="flex items-center gap-3 font-bold"><i data-lucide="message-square" class="text-[#d9ab4e] group-hover:text-[#152c59]"></i> WhatsApp</span>
                                 <span class="text-xs">980 652 872</span>
                             </a>
                             <a href="tel:044725861" class="flex items-center justify-between p-4 bg-white/5 rounded-lg border border-white/10 hover:border-[#d9ab4e] transition">
-                                <span class="font-bold">Teléfono Fijo</span>
+                                <span class="flex items-center gap-3 font-bold"><i data-lucide="phone-call" class="text-[#d9ab4e]"></i> Teléfono Fijo</span>
                                 <span class="text-xs">(044) 725861</span>
                             </a>
                         </div>
@@ -367,20 +360,23 @@
     <script>
         lucide.createIcons();
 
-        // Función para enviar por WhatsApp si el usuario prefiere esa vía
         function sendToWhatsApp() {
-            const form = document.querySelector('form');
-            const formData = new FormData(form);
-            
-            const name = formData.get('nombre') || 'Cliente';
-            const service = formData.get('servicio') || 'Consulta General';
-            const msg = formData.get('mensaje') || 'Deseo información.';
-            
-            const text = `Hola MACETII, mi nombre es ${name}. Estoy interesado en el servicio de: *${service}*. %0A%0AMensaje: ${msg}`;
+            const form = document.getElementById('reservaForm');
+            const name = form.nombre.value;
+            const phone = form.celular.value;
+            const service = form.servicio.value;
+            const details = form.mensaje.value;
+
+            if(!name || !phone || !service) {
+                alert("Por favor, completa al menos Nombre, Celular y Servicio para el mensaje de WhatsApp.");
+                return;
+            }
+
+            const text = `Hola MACETII, deseo reservar una cita:%0A%0A*Nombre:* ${name}%0A*Celular:* ${phone}%0A*Servicio:* ${service}%0A*Detalles:* ${details}`;
             window.open(`https://wa.me/51980652872?text=${text}`, '_blank');
         }
 
-        // Scroll suave
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
