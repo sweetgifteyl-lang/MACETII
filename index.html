@@ -149,29 +149,35 @@
                 <div class="absolute top-0 right-0 w-32 h-32 bg-[#d9ab4e]/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
                 <h3 class="text-2xl font-bold mb-2 text-center">RESERVA TU CITA</h3>
                 <p class="text-center text-[#d9ab4e] text-xs uppercase tracking-widest mb-8">Atención Especializada SUNARP</p>
-                
-<script>
-const form = document.querySelector("form");
-const success = document.getElementById("form-success");
+                <form action="https://formspree.io/f/mojnerjj" method="POST" class="space-y-4">
 
-form.addEventListener("submit", async function(e) {
-e.preventDefault();
+<div class="grid md:grid-cols-2 gap-4">
+<input type="text" name="nombre" placeholder="Nombre completo" required class="w-full bg-white/5 border border-white/10 p-3 rounded text-sm">
 
-const data = new FormData(form);
+<input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" required class="w-full bg-white/5 border border-white/10 p-3 rounded text-sm">
+</div>
 
-fetch(form.action, {
-method: form.method,
-body: data,
-headers: { 'Accept': 'application/json' }
-}).then(response => {
-if (response.ok) {
-success.classList.remove("hidden");
-form.reset();
-}
-});
-});
-</script>
+<input type="email" name="email" placeholder="Correo electrónico" required class="w-full bg-white/5 border border-white/10 p-3 rounded text-sm">
 
+<select name="servicio" required class="w-full bg-[#152c59] border border-white/10 p-3 rounded text-sm">
+<option value="">Seleccione servicio</option>
+<option>Declaratoria de Fábrica</option>
+<option>Independización</option>
+<option>Área Legal</option>
+<option>Trámite Vehicular</option>
+</select>
+
+<textarea name="mensaje" rows="3" placeholder="Describa su caso..." required class="w-full bg-white/5 border border-white/10 p-3 rounded text-sm"></textarea>
+
+<p id="form-success" class="hidden text-green-400 text-center text-sm font-bold">
+✅ Mensaje enviado correctamente. Nos comunicaremos pronto.
+</p>
+
+<button type="submit" class="btn-gold w-full py-4 rounded text-sm uppercase tracking-widest">
+Enviar Solicitud
+</button>
+
+</form>
             </div>
         </div>
     </header>
@@ -428,6 +434,78 @@ form.reset();
             });
         });
     </script>
+<script>
+const form = document.querySelector("form");
+const success = document.getElementById("form-success");
+
+form.addEventListener("submit", function(e) {
+e.preventDefault();
+
+const data = new FormData(form);
+
+fetch(form.action, {
+method: form.method,
+body: data,
+headers: { 'Accept': 'application/json' }
+}).then(response => {
+if (response.ok) {
+success.classList.remove("hidden");
+form.reset();
+}
+});
+});
+<script>
+...
+</script>
+   <script>
+document.addEventListener("DOMContentLoaded", function() {
+
+const form = document.querySelector("form");
+const success = document.getElementById("form-success");
+
+form.addEventListener("submit", function(e) {
+e.preventDefault();
+
+const data = new FormData(form);
+
+fetch(form.action, {
+method: form.method,
+body: data,
+headers: { 'Accept': 'application/json' }
+}).then(r=>{
+if(r.ok){
+success.classList.remove("hidden");
+form.reset();
+}
+});
+});
+
+});
+ <script>
+document.addEventListener("DOMContentLoaded", function() {
+
+const form = document.querySelector("form");
+const success = document.getElementById("form-success");
+
+form.addEventListener("submit", function(e) {
+e.preventDefault();
+
+const data = new FormData(form);
+
+fetch(form.action, {
+method: form.method,
+body: data,
+headers: { 'Accept': 'application/json' }
+}).then(r=>{
+if(r.ok){
+success.classList.remove("hidden");
+form.reset();
+}
+});
+});
+
+});
+</script>
+
 </body>
 </html>
-
