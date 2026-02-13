@@ -1,175 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MACETII | Estudio Técnico Jurídico - Saneamiento Predial</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --azul-oscuro: #152c59;
-            --dorado: #d9ab4e;
-            --blanco: #fefefe;
-            --overlay: rgba(21, 44, 89, 0.85);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MACETII | Estudio Técnico Jurídico - Saneamiento Predial</title>
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #0b1629;
-            color: var(--blanco);
-            scroll-behavior: smooth;
-        }
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 
-        .font-serif { font-family: 'Playfair Display', serif; }
+<style>
+:root{
+--azul-oscuro:#152c59;
+--dorado:#d9ab4e;
+--blanco:#fefefe;
+--overlay:rgba(21,44,89,.85);
+}
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(217, 171, 78, 0.2);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .glass-card:hover {
-            border-color: var(--dorado);
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.07);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .gold-line {
-            height: 3px;
-            background: linear-gradient(90deg, var(--dorado), transparent);
-            width: 100px;
-            margin-top: 10px;
-        }
-
-        .btn-gold {
-            background: linear-gradient(135deg, #d9ab4e 0%, #b88a2e 100%);
-            color: #152c59;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(217, 171, 78, 0.3);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .btn-gold:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(217, 171, 78, 0.5);
-        }
-
-        .hero-section {
-            background: linear-gradient(var(--overlay), var(--overlay)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        .floating-buttons {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .float-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: transform 0.3s;
-        }
-
-        .float-btn:hover { transform: scale(1.1); }
-
-        input, select, textarea {
-            color: white;
-        }
-    </style>
+body{font-family:Montserrat,sans-serif;background:#0b1629;color:#fff}
+.font-serif{font-family:'Playfair Display',serif}
+.glass-card{background:rgba(255,255,255,.03);backdrop-filter:blur(10px);border:1px solid rgba(217,171,78,.2);transition:.4s}
+.glass-card:hover{border-color:var(--dorado);transform:translateY(-5px);background:rgba(255,255,255,.07)}
+.gold-line{height:3px;background:linear-gradient(90deg,var(--dorado),transparent);width:100px}
+.btn-gold{background:linear-gradient(135deg,#d9ab4e,#b88a2e);color:#152c59;font-weight:700}
+.hero-section{background:linear-gradient(var(--overlay),var(--overlay)),url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab');background-size:cover}
+.floating-buttons{position:fixed;right:20px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:99}
+.float-btn{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff}
+</style>
 </head>
+
 <body>
 
-    <div class="floating-buttons">
-        <a href="https://wa.me/51980652872" target="_blank" class="float-btn bg-green-500"><i data-lucide="message-circle"></i></a>
-        <a href="tel:980652872" class="float-btn bg-blue-600"><i data-lucide="phone"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61575778253649" target="_blank" class="float-btn bg-blue-800"><i data-lucide="facebook"></i></a>
-    </div>
+<div class="floating-buttons">
+<a href="https://wa.me/51980652872" class="float-btn bg-green-500"><i data-lucide="message-circle"></i></a>
+<a href="tel:980652872" class="float-btn bg-blue-600"><i data-lucide="phone"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61575778253649" class="float-btn bg-blue-800"><i data-lucide="facebook"></i></a>
+</div>
 
-    <nav class="sticky top-0 z-50 bg-[#152c59]/95 backdrop-blur-md border-b border-[#d9ab4e]/20 py-4 px-6">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <img src="https://i.ibb.co/bZtb3rm/MI-LOGO.jpg" alt="MACETII Logo" class="h-12 border border-[#d9ab4e]/30 rounded">
-                <div class="hidden md:block">
-                    <span class="block font-bold text-xl tracking-tighter">MACETII</span>
-                    <span class="text-[9px] uppercase tracking-widest text-[#d9ab4e]">Estudio Técnico Jurídico</span>
-                </div>
-            </div>
-            <div class="hidden lg:flex gap-8 text-xs font-bold uppercase tracking-widest">
-                <a href="#inicio" class="hover:text-[#d9ab4e] transition">Inicio</a>
-                <a href="#nosotros" class="hover:text-[#d9ab4e] transition">Nosotros</a>
-                <a href="#servicios" class="hover:text-[#d9ab4e] transition">Servicios</a>
-                <a href="#contacto" class="hover:text-[#d9ab4e] transition">Contacto</a>
-            </div>
-            <a href="#reservar" class="btn-gold px-6 py-2 rounded text-xs uppercase">Reserva Cita</a>
-        </div>
-    </nav>
+<header class="hero-section min-h-screen flex items-center px-6">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12">
 
-    <header id="inicio" class="hero-section min-h-[90vh] flex items-center relative py-20">
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-[#d9ab4e] font-bold tracking-[0.3em] uppercase mb-4 text-sm">Más de 12 años de experiencia</h2>
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">Expertos en <br><span class="text-[#d9ab4e]">Saneamiento Predial</span></h1>
-                <div class="gold-line mb-8"></div>
-                <p class="text-slate-300 text-lg mb-10 leading-relaxed max-w-lg">
-                    Brindamos soluciones integrales en área legal y técnica en Trujillo y todo el Perú. Seguridad jurídica y respaldo para su patrimonio.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#reservar" class="btn-gold px-10 py-4 rounded shadow-xl">RESERVA TU CITA</a>
-                    <a href="#contacto" class="border border-white/30 px-10 py-4 rounded hover:bg-white/10 transition">CONTÁCTANOS</a>
-                </div>
-            </div>
+<div>
+<h1 class="text-5xl font-bold mb-6">Expertos en <span class="text-[#d9ab4e]">Saneamiento Predial</span></h1>
+<p class="text-slate-300 mb-10">Soluciones técnicas y legales con respaldo profesional.</p>
+</div>
 
-            <div id="reservar" class="glass-card p-8 rounded-2xl border-2 border-[#d9ab4e]/40 shadow-2xl relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-[#d9ab4e]/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
-                <h3 class="text-2xl font-bold mb-2 text-center">RESERVA TU CITA</h3>
-                <p class="text-center text-[#d9ab4e] text-xs uppercase tracking-widest mb-8">Atención Especializada SUNARP</p>
-                
-                <form action="https://formspree.io/f/mojnerjj" method="POST" class="space-y-4">
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <input type="text" name="nombre" placeholder="Nombre completo" required class="w-full bg-white/5 border border-white/10 p-3 rounded text-sm focus:border-[#d9ab4e] outline-none transition">
-                        <input type="tel" name="celular" placeholder="Número de Celular" required class="w-full bg-white/5 border border-white/10 p-3 rounded text-sm focus:border-[#d9ab4e] outline-none transition">
-                    </div>
-                    
-                    <input type="email" name="email" placeholder="Correo electrónico" required class="w-full bg-white/5 border border-white/10 p-3 rounded text-sm focus:border-[#d9ab4e] outline-none transition">
-                    
-                    <select name="servicio" required class="w-full bg-[#152c59] border border-white/10 p-3 rounded text-sm focus:border-[#d9ab4e] outline-none transition">
-                        <option value="" disabled selected>Seleccione Servicio de Interés</option>
-                        <option value="Declaratoria de Fábrica">Declaratoria de Fábrica</option>
-                        <option value="Independización">Independización</option>
-                        <option value="Área Legal (Prescripción/Sucesión)">Área Legal (Prescripción/Sucesión)</option>
-                        <option value="Trámite Vehicular">Trámite Vehicular</option>
-                    </select>
+<div class="glass-card p-8 rounded-xl">
 
-                    <textarea name="mensaje" placeholder="Cuéntenos sobre su caso..." rows="3" class="w-full bg-white/5 border border-white/10 p-3 rounded text-sm focus:border-[#d9ab4e] outline-none transition"></textarea>
-                    
-                    <button type="submit" class="btn-gold w-full py-4 rounded text-sm uppercase tracking-widest hover:brightness-110">
-                        Enviar Solicitud de Reserva
-                    </button>
-                </form>
-            </div>
-        </div>
-    </header>
+<h3 class="text-2xl font-bold text-center mb-6">RESERVA TU CITA</h3>
 
-    <section id="nosotros" class="py-24 bg-[#0b1629]">
-        <div class="max
+<form action="https://formspree.io/f/mojnerjj" method="POST" onsubmit="mostrarGracias(event)" class="space-y-4">
+
+<div class="grid md:grid-cols-2 gap-4">
+<input type="text" name="nombre" placeholder="Nombre completo" required class="w-full bg-white/5 p-3 rounded">
+<input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" required class="w-full bg-white/5 p-3 rounded">
+</div>
+
+<input type="email" name="email" placeholder="Correo electrónico" required class="w-full bg-white/5 p-3 rounded">
+
+<select name="servicio" required class="w-full bg-[#152c59] p-3 rounded">
+<option value="">Seleccione Servicio</option>
+<option>Declaratoria de Fábrica</option>
+<option>Independización</option>
+<option>Área Legal</option>
+<option>Trámite Vehicular</option>
+</select>
+
+<textarea name="mensaje" rows="3" placeholder="Cuéntenos su caso..." required class="w-full bg-white/5 p-3 rounded"></textarea>
+
+<button type="submit" class="btn-gold w-full py-3 rounded">Enviar Solicitud</button>
+
+</form>
+
+<div id="mensaje-gracias" class="hidden mt-6 text-center text-[#d9ab4e] font-bold">
+✅ Gracias por contactarnos.<br>
+Nos comunicaremos con usted a la brevedad.
+</div>
+
+</div>
+</div>
+</header>
+
+<script>
+lucide.createIcons();
+
+function mostrarGracias(e){
+e.preventDefault();
+const f=e.target;
+fetch(f.action,{method:"POST",body:new FormData(f),headers:{Accept:"application/json"}})
+.then(()=>{
+f.reset();
+document.getElementById("mensaje-gracias").classList.remove("hidden");
+});
+}
+</script>
+
+</body>
+</html>
