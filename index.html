@@ -149,7 +149,7 @@
                 <div class="absolute top-0 right-0 w-32 h-32 bg-[#d9ab4e]/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
                 <h3 class="text-2xl font-bold mb-2 text-center">RESERVA TU CITA</h3>
                 <p class="text-center text-[#d9ab4e] text-xs uppercase tracking-widest mb-8">Atención Especializada SUNARP</p>
-                <form action="https://formspree.io/f/mojnerjj" method="POST" class="space-y-4">
+                <form onsubmit="enviarWhatsApp(); return false;" class="space-y-4">
 
 <div class="grid md:grid-cols-2 gap-4">
 <input type="text" name="nombre" placeholder="Nombre completo" required class="w-full bg-white/5 border border-white/10 p-3 rounded text-sm">
@@ -507,5 +507,33 @@ form.reset();
 });
 </script>
 
+<script>
+function enviarWhatsApp(){
+
+let nombre = document.querySelector('input[name="nombre"]').value;
+let telefono = document.querySelector('input[name="telefono"]').value;
+let servicio = document.querySelector('select[name="servicio"]').value;
+let mensaje = document.querySelector('textarea[name="mensaje"]').value;
+
+let numero = "51977662514";
+
+let texto =
+"*MACETII – Estudio Técnico Jurídico*%0A%0A" +
+"*Nombre:* " + nombre + "%0A" +
+"*Teléfono:* " + telefono + "%0A" +
+"*Servicio:* " + servicio + "%0A" +
+"*Mensaje:* " + mensaje;
+
+let url = "https://wa.me/" + numero + "?text=" + texto;
+
+window.open(url, "_blank");
+
+}
+</script>
+
 </body>
 </html>
+
+</body>
+</html>
+
